@@ -1,7 +1,7 @@
 {
   "name": "sensortemperatura",
   "version": "1.0.0",
-  "description": "proyecto nodeJS con sensor de temperatura ESP32",
+  "description": "proyecto nodeJS con sensor de temperatura ESP32.",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
