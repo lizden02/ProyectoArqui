@@ -1,1 +1,32 @@
 version: "3.8"
+
+services:
+  postgres:
+    image: postgres
+    restart: always
+    ports:
+      - "5432:5432"
+    environment:
+      POSTGRES_USER: lizden02
+      POSTGRES_PASSWORD: lizden02
+    volumes:
+      - ./local_pgdata:/var/lib/postgresql/data
+  pgadmin:
+    image: dpage/pgadmin4
+    restart: always
+    ports:
+      - "80:80"
+    environment:
+      PGADMIN_DEFAULT_EMAIL: lruanom5@miumg.edu.gt
+      PGADMIN_DEFAULT_PASSWORD: lizden02
+    volumes:
+      - ./pgadmin-data:/var/lib/pgadmin
+  grafana:
+    image: grafana/grafana-enterprise
+    restart: unless-stopped
+    ports:
+     - '3004:3000' 
+
+volumes:
+  local_pgdata:
+  pgadmin-data:
